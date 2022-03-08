@@ -1,9 +1,11 @@
+def var1 = 'JK'
 pipeline {
   agent any
   stages {
     stage('build') {
       steps {
-        echo "Running ${env.BUILD_ID} on ${env.BUILD_NUMBER}"
+        echo "Hello ${var1}"
+        echo 'Hello ${var1}'
       }
     }
   }
