@@ -1,11 +1,12 @@
-def var1 = 'JK'
 pipeline {
   agent any
+  parameters {
+    string defaultValue: '123', name: 'param1', trim: true
+  }
   stages {
     stage('build') {
       steps {
-        echo "Hello ${var1}"
-        echo 'Hello ${var1}'
+        echo "Hello ${params.param1}"
       }
     }
   }
