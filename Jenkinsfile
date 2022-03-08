@@ -3,16 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        ec 'hel 1234'
+        echo "Running ${env.BUILD_ID} on ${env.BUILD_NUMBER}"
       }
     }
   }
-   post {
-        success {
-            mail to:"xuanhieu1989@gmail.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
-        }
-        failure {
-            mail to:"xuanhieu1989@gmail.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
-        }
-    } 
 }
